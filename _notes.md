@@ -49,5 +49,14 @@ Skills
     web-security
 
 # Get Claude to implement TDD
-
 [Prompt]❯ Can you update CLAUDE.md with instructions to tell yourself to implement TDD approach. For every feature/task you are about to implement, write unittests first (the tests are expected to fail at first), then implement the relevant feature, and then confirm the unittests passes. 
+
+# install Playwright plugin
+[Prompt]> /plugin
+    (actually already installed to Claude, but fails to connect to Playwright MCP)
+    (looks like it's the certificate issue, and Claude Code couldn't run npx to kick off Playwright MCP to connect to. To fix, added use-system-ca to global claude settings.json, hopefully fix for good)
+
+# install typescript-lsp plugin
+[Prompt]> /plugin
+Select typescript-lsp, install at project level
+
