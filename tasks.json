@@ -1,0 +1,271 @@
+[
+  {
+    "category": "setup",
+    "description": "Project configuration and environment",
+    "steps": [
+      "Confirm prisma/schema.prisma exists with correct output path (app/generated/prisma)",
+      "Populate .env.local with BETTER_AUTH_SECRET, BETTER_AUTH_URL, GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, DATABASE_URL",
+      "Verify data/ directory exists for SQLite file",
+      "Confirm tailwind.config.ts and next.config.ts are correct"
+    ],
+    "passes": false
+  },
+  {
+    "category": "database",
+    "description": "Prisma schema: better-auth tables + Note model",
+    "steps": [
+      "Run `npx @better-auth/cli generate` to append user, session, account, verification models",
+      "Add Note model with id, userId, title, content, isShared, shareToken, createdAt, updatedAt",
+      "Run `npx prisma migrate dev --name init`",
+      "Run `npx prisma generate` and verify client at app/generated/prisma",
+      "Write test: assert Note model can be created/read via Prisma client"
+    ],
+    "passes": false
+  },
+  {
+    "category": "database",
+    "description": "Prisma client singleton (lib/db.ts)",
+    "steps": [
+      "Write test: importing db does not throw, db is a PrismaClient instance",
+      "Create lib/db.ts exporting a singleton PrismaClient",
+      "Confirm DATABASE_URL is consumed correctly"
+    ],
+    "passes": false
+  },
+  {
+    "category": "auth",
+    "description": "better-auth server instance (lib/auth.ts)",
+    "steps": [
+      "Write test: auth object is defined and has expected shape",
+      "Create lib/auth.ts using betterAuth with prismaAdapter, emailAndPassword, and Google social provider",
+      "Confirm env vars GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET are referenced"
+    ],
+    "passes": false
+  },
+  {
+    "category": "auth",
+    "description": "better-auth browser client (lib/auth-client.ts)",
+    "steps": [
+      "Write test: authClient is defined",
+      "Create lib/auth-client.ts using createAuthClient()"
+    ],
+    "passes": false
+  },
+  {
+    "category": "auth",
+    "description": "better-auth API route handler (app/api/auth/[...all]/route.ts)",
+    "steps": [
+      "Write test: GET /api/auth/[...all] route exists and responds",
+      "Create route.ts that exports GET and POST handlers from better-auth"
+    ],
+    "passes": false
+  },
+  {
+    "category": "auth",
+    "description": "Route protection middleware (middleware.ts)",
+    "steps": [
+      "Write test: unauthenticated request to /notes redirects to /login",
+      "Create middleware.ts at project root",
+      "Use better-auth getSession to detect session",
+      "Redirect to /login for protected paths; redirect logged-in users away from /login and /register",
+      "Define matcher for (app) routes and auth routes"
+    ],
+    "passes": false
+  },
+  {
+    "category": "auth",
+    "description": "Register page and form (app/(auth)/register/page.tsx + components/auth/RegisterForm.tsx)",
+    "steps": [
+      "Write test: RegisterForm renders email, password fields and submit button",
+      "Write test: successful submission calls authClient.signUp.email",
+      "Create RegisterForm.tsx client component with Zod validation",
+      "Create register/page.tsx rendering RegisterForm",
+      "Redirect to /notes on success"
+    ],
+    "passes": false
+  },
+  {
+    "category": "auth",
+    "description": "Login page and form (app/(auth)/login/page.tsx + components/auth/LoginForm.tsx)",
+    "steps": [
+      "Write test: LoginForm renders email, password fields and Google button",
+      "Write test: successful email submission calls authClient.signIn.email",
+      "Write test: Google button calls authClient.signIn.social",
+      "Create LoginForm.tsx client component with Zod validation",
+      "Create login/page.tsx rendering LoginForm",
+      "Redirect to /notes on success"
+    ],
+    "passes": false
+  },
+  {
+    "category": "auth",
+    "description": "Sign out functionality",
+    "steps": [
+      "Write test: sign-out button calls authClient.signOut and redirects to /login",
+      "Add Sign Out button to app shell nav bar",
+      "Call authClient.signOut() on click"
+    ],
+    "passes": false
+  },
+  {
+    "category": "ui",
+    "description": "Base UI components: Button, Input, ConfirmDialog",
+    "steps": [
+      "Write test: Button renders with correct label and handles onClick",
+      "Write test: Input renders with value and calls onChange",
+      "Write test: ConfirmDialog shows/hides based on open prop and calls onConfirm/onCancel",
+      "Create components/ui/Button.tsx",
+      "Create components/ui/Input.tsx",
+      "Create components/ui/ConfirmDialog.tsx"
+    ],
+    "passes": false
+  },
+  {
+    "category": "ui",
+    "description": "App shell layout with nav bar (app/(app)/layout.tsx)",
+    "steps": [
+      "Write test: layout renders app logo and Sign Out button",
+      "Create (app)/layout.tsx with fixed top nav, max-w-4xl centered content area",
+      "Include app logo and sign-out button in nav"
+    ],
+    "passes": false
+  },
+  {
+    "category": "ui",
+    "description": "TipTap NoteEditor component (components/editor/NoteEditor.tsx)",
+    "steps": [
+      "Write test: NoteEditor renders without crashing with empty content",
+      "Write test: onUpdate callback fires when content changes",
+      "Create NoteEditor.tsx as a client component",
+      "Configure StarterKit + CodeBlockLowlight extensions per SPEC section 7.1",
+      "Persist content as JSON.stringify(editor.getJSON())"
+    ],
+    "passes": false
+  },
+  {
+    "category": "ui",
+    "description": "EditorToolbar component (components/editor/EditorToolbar.tsx)",
+    "steps": [
+      "Write test: all toolbar buttons render",
+      "Write test: Bold button calls toggleBold on editor",
+      "Create EditorToolbar.tsx with all buttons from SPEC section 7.2",
+      "Highlight active state for each button using editor.isActive()"
+    ],
+    "passes": false
+  },
+  {
+    "category": "ui",
+    "description": "ReadOnlyEditor component (components/editor/ReadOnlyEditor.tsx)",
+    "steps": [
+      "Write test: ReadOnlyEditor renders content in read-only mode",
+      "Create ReadOnlyEditor.tsx with editable: false",
+      "Accept pre-parsed JSON content as prop"
+    ],
+    "passes": false
+  },
+  {
+    "category": "ui",
+    "description": "NoteCard and NoteList components (components/notes/)",
+    "steps": [
+      "Write test: NoteCard displays title, updatedAt, and Shared badge when isShared",
+      "Write test: NoteList renders a NoteCard for each note",
+      "Create components/notes/NoteCard.tsx",
+      "Create components/notes/NoteList.tsx"
+    ],
+    "passes": false
+  },
+  {
+    "category": "ui",
+    "description": "ShareControls component (components/notes/ShareControls.tsx)",
+    "steps": [
+      "Write test: shows share URL and copy button when isShared is true",
+      "Write test: shows Share button when isShared is false",
+      "Write test: copy button writes URL to clipboard",
+      "Create ShareControls.tsx accepting isShared, shareToken, and onToggle props"
+    ],
+    "passes": false
+  },
+  {
+    "category": "validation",
+    "description": "Zod schemas for note server actions (lib/schemas/notes.ts)",
+    "steps": [
+      "Write test: createNoteSchema rejects empty title, accepts valid input",
+      "Write test: updateNoteSchema requires id",
+      "Create lib/schemas/notes.ts with createNoteSchema, updateNoteSchema, deleteNoteSchema",
+      "title: string, max 255 chars; content: string"
+    ],
+    "passes": false
+  },
+  {
+    "category": "notes",
+    "description": "Server actions: createNote, updateNote, deleteNote, toggleShare (actions/notes.ts)",
+    "steps": [
+      "Write test: createNote inserts a note and returns the new id",
+      "Write test: updateNote rejects if userId does not match session",
+      "Write test: deleteNote removes note and redirects to /notes",
+      "Write test: toggleShare flips isShared and generates shareToken on first share",
+      "Create actions/notes.ts implementing all four actions",
+      "Use Zod schemas from lib/schemas/notes.ts for input validation",
+      "Verify session ownership before every mutation"
+    ],
+    "passes": false
+  },
+  {
+    "category": "notes",
+    "description": "Notes list page (app/(app)/notes/page.tsx)",
+    "steps": [
+      "Write test: page fetches notes for current user ordered by updatedAt DESC",
+      "Write test: renders NoteList with fetched notes",
+      "Create notes/page.tsx as a Server Component",
+      "Fetch notes via Prisma, pass to NoteList",
+      "Include 'New Note' button linking to /notes/new"
+    ],
+    "passes": false
+  },
+  {
+    "category": "notes",
+    "description": "New note page (app/(app)/notes/new/page.tsx)",
+    "steps": [
+      "Write test: page renders NoteEditor with empty content and empty title input",
+      "Write test: save calls createNote action and redirects to /notes/[id]",
+      "Create notes/new/page.tsx",
+      "Title input above editor; Save on button click or Cmd/Ctrl+S",
+      "Redirect to /notes/[id] after save"
+    ],
+    "passes": false
+  },
+  {
+    "category": "notes",
+    "description": "Edit note page (app/(app)/notes/[id]/page.tsx)",
+    "steps": [
+      "Write test: returns 404 when note not found or not owned by session user",
+      "Write test: renders NoteEditor pre-populated with stored content",
+      "Write test: Save calls updateNote, Delete calls deleteNote with confirmation, Share toggle calls toggleShare",
+      "Create notes/[id]/page.tsx as a Server Component",
+      "Hydrate editor content via JSON.parse(note.content)",
+      "Include Save, Delete (with ConfirmDialog), and ShareControls in toolbar"
+    ],
+    "passes": false
+  },
+  {
+    "category": "notes",
+    "description": "Public share page (app/share/[shareToken]/page.tsx)",
+    "steps": [
+      "Write test: returns 404 when shareToken not found or isShared is false",
+      "Write test: renders ReadOnlyEditor with note title and content",
+      "Create share/[shareToken]/page.tsx as a Server Component",
+      "Look up note by shareToken where isShared = true",
+      "Render title, ReadOnlyEditor, and 'Made with NoteApp' footer"
+    ],
+    "passes": false
+  },
+  {
+    "category": "setup",
+    "description": "Root and landing page (app/layout.tsx + app/page.tsx)",
+    "steps": [
+      "Create app/layout.tsx as root layout with html/body and Tailwind font setup",
+      "Create app/page.tsx: redirect to /notes if session exists, else redirect to /login"
+    ],
+    "passes": false
+  }
+]

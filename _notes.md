@@ -64,3 +64,29 @@ Select typescript-lsp, install at project level
 [Claude]> I want to use Zod for Validation, please update in CLAUDE.md with instructions. Also provide the npm command to install zod.
 [Terminal]> npm install zod     (actually should add this to the package install at beginning)
 
+# Generate a tasks.json for RALPH loop
+[Claude]>   I want to implment a list of tasks that I can tackle via a RALPH loop. Can you have a look at @SPEC.md and generate a tasks.json file for me, for a list of tasks that would represent the complete app.
+            Each task in this json file should have these attributes:
+            category - ui, auth, database etc
+            description - the feature to be implemented
+            steps - a list of items for the feature to be implemented
+            passes - a boolean showing if the feature has been completed or not
+
+# Setup files for RALPH loop
+[Claude]> Now to implement RALPH loop and start building the app, what are the files that needs to be created? Can you help me create them?
+(Ohh.. when I do this, Claude generated a /ralph command which bascially has instruction to go down the list of tasks.json and implement one by one. )
+(This is interesting, but it's not what I had in mind. I wanted to follow the course and use a .sh method)
+(So I will reject this edits, and manaully copy the files from Course Material instead)
+(interestingly when I cancel, Claude does try to work with me on other approach, and provided a .sh version which essentially does above. Still going to follow the course example)
+
+# Manually setup files for RALPH
+## Copied over files:
+    RALPH.md
+    ralph.sh
+    agent-progress.txt
+
+## Update all reference of prd.json to tasks.json
+## Initialize agent-progress.txt
+[Claude]> Can you update agent-progress.txt, under "Project initialized with:" line, with a summary snapshot of the main testchstack and version that we have installed and setup so far. Example NextJS, Vitest etc.
+## Fix use of bun
+[Claude]> In @ralph.sh , can you fix up any reference to usage of "bun". I do not use "bun" in this app. Please fix it to whatever that is more appropriate and applies to the project 
