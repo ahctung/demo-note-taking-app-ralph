@@ -11,6 +11,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 @AGENTS.md
 
+## Development Workflow
+
+Follow TDD for every feature or task:
+1. **Write tests first** — create unit tests that define expected behavior; run them and confirm they fail (`npx vitest run path/to/test.ts`)
+2. **Implement** — write the minimal code to make the tests pass
+3. **Verify** — re-run the tests and confirm all pass before marking the task done
+
 ## Commands
 
 ```bash

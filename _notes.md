@@ -20,7 +20,7 @@ Create a new repository
 [Terminal]> git push -u origin main
 
 # Create initial CLAUDE.md file
-[Prompt] /init
+[Prompt]> /init
 
 added some extra instructions in Preamble
 
@@ -48,4 +48,6 @@ Skills
     modern-tailwind
     web-security
 
+# Get Claude to implement TDD
 
+[Prompt]❯ Can you update CLAUDE.md with instructions to tell yourself to implement TDD approach. For every feature/task you are about to implement, write unittests first (the tests are expected to fail at first), then implement the relevant feature, and then confirm the unittests passes. 
