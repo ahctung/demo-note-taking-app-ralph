@@ -52,6 +52,12 @@ This is a full-stack note-taking app: authenticated users can create rich-text n
 - `ReadOnlyEditor.tsx` — `editable: false`, used on `/share/[shareToken]`
 - Content persisted as `JSON.stringify(editor.getJSON())` in the `content` column; re-hydrated via `JSON.parse`
 
+**Zod Validation**
+- Use Zod for all input validation at system boundaries (Server Actions, API routes, form data)
+- Define schemas in `lib/schemas/` and reuse them across server and client
+- Prefer `schema.parse()` (throws) in server actions; use `schema.safeParse()` when you need to handle errors gracefully
+- Keep schemas co-located with the feature they validate when only used in one place
+
 **Server Actions** (`actions/notes.ts`)
 - `createNote`, `updateNote`, `deleteNote`, `toggleShare`
 - Each action verifies the session user owns the target note before mutating
