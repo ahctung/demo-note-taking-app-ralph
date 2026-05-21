@@ -82,7 +82,7 @@
       "Create register/page.tsx rendering RegisterForm",
       "Redirect to /notes on success"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "auth",
@@ -95,7 +95,7 @@
       "Create login/page.tsx rendering LoginForm",
       "Redirect to /notes on success"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "auth",
@@ -105,7 +105,7 @@
       "Add Sign Out button to app shell nav bar",
       "Call authClient.signOut() on click"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "ui",
@@ -118,7 +118,7 @@
       "Create components/ui/Input.tsx",
       "Create components/ui/ConfirmDialog.tsx"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "ui",
@@ -128,7 +128,7 @@
       "Create (app)/layout.tsx with fixed top nav, max-w-4xl centered content area",
       "Include app logo and sign-out button in nav"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "ui",
@@ -194,7 +194,7 @@
       "Create lib/schemas/notes.ts with createNoteSchema, updateNoteSchema, deleteNoteSchema",
       "title: string, max 255 chars; content: string"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "notes",
