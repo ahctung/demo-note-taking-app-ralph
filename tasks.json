@@ -220,7 +220,7 @@
       "Fetch notes via Prisma, pass to NoteList",
       "Include 'New Note' button linking to /notes/new"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "notes",

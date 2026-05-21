@@ -28,6 +28,13 @@ Ready to begin feature implementation.
 
 ---
 
+## Notes list page (app/(app)/notes/page.tsx) — 2026-05-21
+- Wrote tests: fetches notes with userId filter + updatedAt DESC order, renders NoteList with results
+- Tested async server component by awaiting it and rendering the returned JSX
+- Implementation was already complete; both tests pass
+
+---
+
 ## TipTap NoteEditor component (components/editor/NoteEditor.tsx) — 2026-05-21
 - Added missing "onUpdate callback fires when content changes" test
 - Used `mock.calls[length-1]` to get the most recent useEditor call config within the test
