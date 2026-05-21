@@ -28,6 +28,13 @@ Ready to begin feature implementation.
 
 ---
 
+## New note page (app/(app)/notes/new/page.tsx) — 2026-05-21
+- Wrote tests: renders empty title input and NoteEditor; Save triggers createNote and redirects to /notes/[id]
+- Page is a client component; mocked NoteEditor, EditorToolbar, createNote, and useRouter
+- Implementation was already complete; both tests pass
+
+---
+
 ## Notes list page (app/(app)/notes/page.tsx) — 2026-05-21
 - Wrote tests: fetches notes with userId filter + updatedAt DESC order, renders NoteList with results
 - Tested async server component by awaiting it and rendering the returned JSX

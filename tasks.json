@@ -232,7 +232,7 @@
       "Title input above editor; Save on button click or Cmd/Ctrl+S",
       "Redirect to /notes/[id] after save"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "notes",
