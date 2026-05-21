@@ -40,7 +40,7 @@
       "Create lib/auth.ts using betterAuth with prismaAdapter, emailAndPassword, and Google social provider",
       "Confirm env vars GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET are referenced"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "auth",
@@ -49,7 +49,7 @@
       "Write test: authClient is defined",
       "Create lib/auth-client.ts using createAuthClient()"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "auth",
@@ -58,7 +58,7 @@
       "Write test: GET /api/auth/[...all] route exists and responds",
       "Create route.ts that exports GET and POST handlers from better-auth"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "auth",
@@ -70,7 +70,7 @@
       "Redirect to /login for protected paths; redirect logged-in users away from /login and /register",
       "Define matcher for (app) routes and auth routes"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "auth",
