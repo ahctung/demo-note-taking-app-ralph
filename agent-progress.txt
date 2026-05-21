@@ -28,6 +28,13 @@ Ready to begin feature implementation.
 
 ---
 
+## Server actions: createNote, updateNote, deleteNote, toggleShare (actions/notes.ts) — 2026-05-21
+- Added missing deleteNote test (verifies db.note.delete called and redirect to /notes)
+- Implementation was already complete in actions/notes.ts; all 4 tests now pass
+- Notable: deleteNote uses next/navigation redirect, mocked in tests via vi.mock
+
+---
+
 ## Root and landing page (app/layout.tsx + app/page.tsx) — 2026-05-21
 - Replaced default Next.js boilerplate in app/page.tsx with session-aware redirect: redirects to /notes if authenticated, /login otherwise
 - Updated app/layout.tsx metadata title/description from "Create Next App" to "NoteApp"

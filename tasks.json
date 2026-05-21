@@ -208,7 +208,7 @@
       "Use Zod schemas from lib/schemas/notes.ts for input validation",
       "Verify session ownership before every mutation"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "notes",
