@@ -106,3 +106,16 @@ Can see this added an entry in setings.local.json
 # Found that agent-progress.txt is not being updated
 Solution is to add in CLAUDE.md instructions to update the file and what to update with. Since CLAUDE.md is the authoritative workflow.
 Also update in ralph.sh, to specifically provide guidance on WHAT to update in the progress file.
+
+# RALPH loop 
+Took 2 rounds (first round exchausted my session limit) but eventually completed all 24 tasks in the list
+There was a few errors, manaully fixed them up and committed the rest of files.
+All unittes passes, and was able to build
+However, seems some weirdness with landing page, takes a long time to load, and then gets redirected to login page after awhile.
+Proceed to try and fix what ever need be and get it running.
+
+---
+[Claude]>  There is something weird with the Home page, it seems to take a long time to load, and then it eventually gets redirected to the login page. Can you explain what's hapening?
+---
+Remove notes.db from being committed, and update README for instructions on how to recreate the sqlite db
+---

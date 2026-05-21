@@ -2,7 +2,17 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+### Database setup
+
+`data/notes.db` is not committed to the repo. On a fresh clone, create it by running:
+
+```bash
+npx prisma migrate deploy
+```
+
+Prisma will create the file and apply all migrations automatically.
+
+### Run the development server
 
 ```bash
 npm run dev
