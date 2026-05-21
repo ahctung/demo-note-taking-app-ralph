@@ -28,6 +28,13 @@ Ready to begin feature implementation.
 
 ---
 
+## Edit note page (app/(app)/notes/[id]/page.tsx) — 2026-05-21
+- Wrote tests: 404 on missing/unowned note, renders NoteEditor with content, Save/Delete/Share trigger correct actions
+- Key decision: mocked notFound() to throw (matching real Next.js behavior) so null-note path errors properly
+- Implementation was already complete; all 5 tests pass
+
+---
+
 ## New note page (app/(app)/notes/new/page.tsx) — 2026-05-21
 - Wrote tests: renders empty title input and NoteEditor; Save triggers createNote and redirects to /notes/[id]
 - Page is a client component; mocked NoteEditor, EditorToolbar, createNote, and useRouter

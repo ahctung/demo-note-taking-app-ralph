@@ -245,7 +245,7 @@
       "Hydrate editor content via JSON.parse(note.content)",
       "Include Save, Delete (with ConfirmDialog), and ShareControls in toolbar"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "notes",
