@@ -102,3 +102,7 @@ Can see this added an entry in setings.local.json
             No need to push to remote repository
             Use conventional commit message (e.g. "feat:", "fix:", "refactor:")
             Prefix the commit message with "(Claude) " 
+
+# Found that agent-progress.txt is not being updated
+Solution is to add in CLAUDE.md instructions to update the file and what to update with. Since CLAUDE.md is the authoritative workflow.
+Also update in ralph.sh, to specifically provide guidance on WHAT to update in the progress file.

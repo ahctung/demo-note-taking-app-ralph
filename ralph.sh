@@ -45,7 +45,9 @@ Verify UI changes with Playwright MCP.
 Run checks (npm run build, npm run lint, npx vitest run).
 
 After each completed task:
-Mark passes=true in the tasks.json file (for the completed task), update $PROGRESS_FILE, commit via Git.
+1. Append to $PROGRESS_FILE: the task description, today's date, what was implemented, and any notable decisions or challenges.
+2. Mark passes=true in tasks.json for the completed task.
+3. Commit via Git (following @CLAUDE.md commit conventions).
 
 When ALL tasks have passes=true, output: <complete>ALL_TASKS_DONE</complete>
 " 2>&1) || {

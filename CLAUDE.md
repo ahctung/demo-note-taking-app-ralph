@@ -17,9 +17,16 @@ Follow TDD for every feature or task:
 1. **Write tests first** — create unit tests that define expected behavior; run them and confirm they fail (`npx vitest run path/to/test.ts`)
 2. **Implement** — write the minimal code to make the tests pass
 3. **Verify** — re-run the tests and confirm all pass before marking the task done
-4. **Commit** — after each task from `tasks.json` is complete, create a git commit (do NOT push to remote):
-   - Use conventional commit prefixes: `feat:`, `fix:`, `refactor:`, `test:`, `chore:`, etc.
-   - Prefix every commit message with `(Claude) `, e.g. `(Claude) feat: add note sharing toggle`
+4. **Commit** — after each task from `tasks.json` is complete:
+   - Append an entry to `agent-progress.txt` in this format:
+     ```
+     ## <Task description> — <YYYY-MM-DD>
+     - What was implemented
+     - Any notable decisions or challenges
+     ```
+   - Create a git commit (do NOT push to remote):
+     - Use conventional commit prefixes: `feat:`, `fix:`, `refactor:`, `test:`, `chore:`, etc.
+     - Prefix every commit message with `(Claude) `, e.g. `(Claude) feat: add note sharing toggle`
 
 ## Commands
 
