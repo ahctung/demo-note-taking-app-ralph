@@ -28,6 +28,13 @@ Ready to begin feature implementation.
 
 ---
 
+## Public share page (app/share/[shareToken]/page.tsx) — 2026-05-21
+- Wrote tests: 404 on missing/unshared token, renders ReadOnlyEditor with title/content/"Made with NoteApp" footer
+- Reused notFound()-throws pattern from edit note page tests
+- Implementation was already complete; both tests pass
+
+---
+
 ## Edit note page (app/(app)/notes/[id]/page.tsx) — 2026-05-21
 - Wrote tests: 404 on missing/unowned note, renders NoteEditor with content, Save/Delete/Share trigger correct actions
 - Key decision: mocked notFound() to throw (matching real Next.js behavior) so null-note path errors properly

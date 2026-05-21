@@ -257,7 +257,7 @@
       "Look up note by shareToken where isShared = true",
       "Render title, ReadOnlyEditor, and 'Made with NoteApp' footer"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "setup",
