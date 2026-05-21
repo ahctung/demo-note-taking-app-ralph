@@ -4,13 +4,12 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ### Database setup
 
-`data/notes.db` is not committed to the repo. On a fresh clone, create it by running:
+`data/notes.db` is not committed to the repo, and the Prisma client (`app/generated/prisma`) is a build artifact that must be generated locally. On a fresh clone, run both steps:
 
 ```bash
-npx prisma migrate deploy
+npx prisma generate       # generates app/generated/prisma (required before build/dev)
+npx prisma migrate deploy # creates data/notes.db and applies all migrations
 ```
-
-Prisma will create the file and apply all migrations automatically.
 
 ### Run the development server
 
