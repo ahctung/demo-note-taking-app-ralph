@@ -90,3 +90,9 @@ Select typescript-lsp, install at project level
 [Claude]> Can you update agent-progress.txt, under "Project initialized with:" line, with a summary snapshot of the main testchstack and version that we have installed and setup so far. Example NextJS, Vitest etc.
 ## Fix use of bun
 [Claude]> In @ralph.sh , can you fix up any reference to usage of "bun". I do not use "bun" in this app. Please fix it to whatever that is more appropriate and applies to the project 
+
+## Turn on Sandbox in Claude
+I moved the project to run in WSL. 
+/sandbox command is now avialable
+selected "Sandbox BashTool, with auto-allow"
+Can see this added an entry in setings.local.json
