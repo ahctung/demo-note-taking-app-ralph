@@ -8,7 +8,7 @@
       "Verify data/ directory exists for SQLite file",
       "Confirm tailwind.config.ts and next.config.ts are correct"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "database",
@@ -20,7 +20,7 @@
       "Run `npx prisma generate` and verify client at app/generated/prisma",
       "Write test: assert Note model can be created/read via Prisma client"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "database",
@@ -30,7 +30,7 @@
       "Create lib/db.ts exporting a singleton PrismaClient",
       "Confirm DATABASE_URL is consumed correctly"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "auth",
