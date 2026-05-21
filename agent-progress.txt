@@ -28,6 +28,13 @@ Ready to begin feature implementation.
 
 ---
 
+## TipTap NoteEditor component (components/editor/NoteEditor.tsx) — 2026-05-21
+- Added missing "onUpdate callback fires when content changes" test
+- Used `mock.calls[length-1]` to get the most recent useEditor call config within the test
+- Implementation was already complete; both tests now pass
+
+---
+
 ## Server actions: createNote, updateNote, deleteNote, toggleShare (actions/notes.ts) — 2026-05-21
 - Added missing deleteNote test (verifies db.note.delete called and redirect to /notes)
 - Implementation was already complete in actions/notes.ts; all 4 tests now pass

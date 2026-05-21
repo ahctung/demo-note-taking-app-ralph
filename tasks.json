@@ -140,7 +140,7 @@
       "Configure StarterKit + CodeBlockLowlight extensions per SPEC section 7.1",
       "Persist content as JSON.stringify(editor.getJSON())"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "ui",
