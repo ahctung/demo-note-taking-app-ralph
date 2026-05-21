@@ -96,3 +96,9 @@ I moved the project to run in WSL.
 /sandbox command is now avialable
 selected "Sandbox BashTool, with auto-allow"
 Can see this added an entry in setings.local.json
+
+# Instruct claude to do regular commits
+[Claude]>   Can you update CLAUDE.md, and give yourself an instruction to do a git commit after completing each task from task.json as you progress through the list
+            No need to push to remote repository
+            Use conventional commit message (e.g. "feat:", "fix:", "refactor:")
+            Prefix the commit message with "(Claude) " 
