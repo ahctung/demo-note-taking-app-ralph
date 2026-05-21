@@ -27,3 +27,10 @@ Project initialized with:
 Ready to begin feature implementation.
 
 ---
+
+## Root and landing page (app/layout.tsx + app/page.tsx) — 2026-05-21
+- Replaced default Next.js boilerplate in app/page.tsx with session-aware redirect: redirects to /notes if authenticated, /login otherwise
+- Updated app/layout.tsx metadata title/description from "Create Next App" to "NoteApp"
+- No tests required per task spec; all 47 existing tests continue to pass
+
+---

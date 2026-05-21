@@ -266,6 +266,6 @@
       "Create app/layout.tsx as root layout with html/body and Tailwind font setup",
       "Create app/page.tsx: redirect to /notes if session exists, else redirect to /login"
     ],
-    "passes": false
+    "passes": true
   }
 ]
