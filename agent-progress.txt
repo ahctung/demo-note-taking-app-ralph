@@ -28,6 +28,12 @@ Ready to begin feature implementation.
 
 ---
 
+## EditorToolbar, ReadOnlyEditor, NoteCard/NoteList, ShareControls — 2026-05-21
+- Verified all required tests existed and passed for these four components (implemented in earlier sessions)
+- Marked all four tasks as passes=true; no new code required
+
+---
+
 ## Public share page (app/share/[shareToken]/page.tsx) — 2026-05-21
 - Wrote tests: 404 on missing/unshared token, renders ReadOnlyEditor with title/content/"Made with NoteApp" footer
 - Reused notFound()-throws pattern from edit note page tests

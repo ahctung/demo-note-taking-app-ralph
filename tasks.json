@@ -151,7 +151,7 @@
       "Create EditorToolbar.tsx with all buttons from SPEC section 7.2",
       "Highlight active state for each button using editor.isActive()"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "ui",
@@ -161,7 +161,7 @@
       "Create ReadOnlyEditor.tsx with editable: false",
       "Accept pre-parsed JSON content as prop"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "ui",
@@ -172,7 +172,7 @@
       "Create components/notes/NoteCard.tsx",
       "Create components/notes/NoteList.tsx"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "ui",
@@ -183,7 +183,7 @@
       "Write test: copy button writes URL to clipboard",
       "Create ShareControls.tsx accepting isShared, shareToken, and onToggle props"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "validation",
